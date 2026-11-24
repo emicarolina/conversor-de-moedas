@@ -11,7 +11,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 10px 12px;
 }
 
 .container {
@@ -19,15 +20,13 @@ body {
   padding: 24px 10px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 600px;
-  height: 100%;
-  max-height: 600px;
   border-radius: 15px;
   box-shadow: 0px 0px 25px -2px rgba(0, 0, 0, 0.56);
-  -webkit-box-shadow: 0px 0px 25px -2px rgba(0, 0, 0, 0.56);
 }
 
 .formulario {
@@ -42,7 +41,7 @@ select {
   width: 100%;
   padding: 8px;
   border-radius: 8px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: inherit;
   border: none;
   outline: none;
   margin-top: 3px;
@@ -50,11 +49,12 @@ select {
 
 input:focus,
 select:focus {
-  outline: 3px solid rgb(25, 16, 73);
+  outline: 3px solid blue;
 }
 
 .botao-conversor {
   cursor: pointer;
+  font-family: inherit;
   background-color: rgb(27, 26, 26);
   color: #fff;
   border-radius: 8px;
@@ -67,12 +67,28 @@ select:focus {
   background-color: rgba(27, 26, 26, 0.466);
 }
 
+.botao-conversor:focus-visible {
+  outline: 3px solid blue;
+}
+
 .area-resultado {
-  border: 1px solid rgb(27, 88, 47);
-  border-radius: 8px;
+  border: 1px solid green;
+  background-color: rgba(0, 128, 0, 0.233);
 }
 
 .area-mensagem-erro {
-  border: 1px solid rgb(88, 27, 27);
+  border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.247);
+}
+
+.area-resultado,
+.area-mensagem-erro {
   border-radius: 8px;
+  padding: 10px 12px;
+  width: 80%;
+}
+
+.area-resultado:empty,
+.area-mensagem-erro:empty {
+  display: none;
 }
